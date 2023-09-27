@@ -136,6 +136,10 @@ class: invert
 
 ---
 
+## [Lawrence's CLI setup](https://drive.google.com/file/d/1MbZeF0V-1JB75qxOoTH_Fk3mxsoEpRuC/view?usp=sharing)
+
+---
+
 ## Exercises
 
 ### Exercise 1
