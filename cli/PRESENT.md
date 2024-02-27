@@ -6,35 +6,33 @@ class: invert
 
 <!-- _class: lead -->
 
-# Intro to Terminal & CLI
+# Intro to Command Line Interface
 
 ---
 
 <!--_class: lead invert-->
 
-## Shell? CLI? Terminal?
+## CLI? Shell? Terminal?
 
-### Types of shells
+Shell is a program that takes commands from the keyboard and gives them to the operating system to perform. In the old days, it was the only user interface available on a Unix-like system such as Linux. (It's the out most layer of the OS, thus the name)
 
-- Z-Shell
-- Bash
-- Powershell
+### Different types (dialects) of shells
+
+- Z-Shell (default for higher versions of macOS & some Linux distros)
+- Bash (default for older versions of macOS & some Linux distros)
+- PowerShell (default for Windows)
 
 ---
 
 ## Why use the terminal?
 
 - Makes you much better at using your OS
-  - More configuration
   - Increase efficiency and productivity
 - You just have to sometimes
   - CLI tools
   - Git
   - Package managers
-
----
-
-- It's fun
+- It's FUN
   - Makes you look cool
   - Makes you feel like a coder
 
@@ -51,7 +49,11 @@ class: invert
 - `mv`: move and rename files
 - `touch`: create a file
 - `mkdir`: make a directory
-- `rmdir`: remove a directory
+
+---
+
+- `clear`: clear the terminal screen
+- `cat`: print files in your terminal
 
 ---
 
@@ -59,30 +61,12 @@ class: invert
 
 - `cd ..`: Navigate to parent directory
 - `cd -`: Navigate to previous directory
-- `echo`: printing variable
-- Declaring environment variables
-  - Declare and asign value to variable with `VAR="string"` (spaces matter)
-  - Print value of variable with `echo $VAR`
-- `*`: All the files in your pwd
-
----
-
-- String matching
-  - `*string*`: all filenames that contain string
-  - `*string`: all filenames that end with string
-  - `string*`: all filenames that start with string
-
----
-
-### Doing More with your Terminal
-
-- `clear`: clear the terminal screen
-- `cat`: print files in your terminal
-- `echo "string" > filename`: adds string to filename. Creates file if one does not exist
-- `echo "strong" >> filename`: appends string to filename
-- Chaining commands
-  - `command 1 && command 2`: command 2 executes if command 1 was successful
-  - `command 1 ; command 2`: command 2 executes no matter if command one was successful or not
+- `cd ~`: Navigate to home directory
+- Common directories
+  - `/`: root directory
+  - `/bin`: binary files
+  - `/etc`: configuration files
+  - `/usr/<YOUR_USERNAME>`: user home directory, YOU WILL BE HERE MOST OF THE TIME
 
 ---
 
@@ -92,13 +76,52 @@ class: invert
 - `rm -rf`: remove recursively and force
 - `ls -a`: list all files (including hidden files)
 - `--help`
-- `man`: read the manual page for the commands
 
 ---
 
-## Package Managers & Additional Tools
+### Greping and Searching
 
-### Common Package Managers
+#### Flags with parameters
+
+- `grep`: search for string in files
+  - `grep "string" filename`: search for string in filename
+  - `grep -r "string" .`: search for string in all files in current directory
+- `find`: find files
+  - `find . -name "filename"`: find file with name filename in current directory
+  - `find . -type d`: find all directories in current directory
+
+---
+
+### Data piping, redirect & chaining commands
+
+- `|`: pipe
+  - `ls | grep "string"`: list all files and search for string
+  - `ls | grep "string" | wc -l`: list all files, search for string, and count the number of files
+- `>`: redirect
+  - `echo "string" > filename`: adds string to filename. Creates file if one does not exist
+  - `echo "strong" >> filename`: appends string to filename
+
+---
+
+- Chaining commands
+  - `command 1 && command 2`: command 2 executes if command 1 was successful
+  - `command 1 ; command 2`: command 2 executes no matter if command one was successful or not
+
+---
+
+### Make Network calls with `curl`
+
+- `curl`: make network requests
+  - `curl <URL>`: make a GET request
+  - `curl -X POST -d "data" <URL>`: make a POST request with data
+
+---
+
+## Package Managers
+
+### OS Package Managers
+
+#### Installs and manages software on your machine
 
 - MacOS
   - Homebrew
@@ -106,6 +129,19 @@ class: invert
 - Linux
   - Apt - Debian based distros
   - Pacman - Arch based distros
+
+---
+
+## Language specific package managers
+
+### Makes managing dependencies easier
+
+- Python
+  - pip
+- Java
+  - Maven
+- JavaScript (Node)
+  - npm
 
 ---
 
@@ -124,10 +160,11 @@ class: invert
 
 ### Plugins and Tools
 
+### [Lawrence's CLI setup](https://drive.google.com/file/d/1MbZeF0V-1JB75qxOoTH_Fk3mxsoEpRuC/view?usp=sharing)
+
 - Z-Shell plugins
   - [oh my zsh](https://ohmyz.sh/)
   - Syntax highlighting
-  - AI autocomplete
 - Lawrence's Favorite Command line tools
   - `fzf`: command line fuzzy finder
   - `ripgrep/grep`: search for string in files
@@ -136,38 +173,16 @@ class: invert
 
 ---
 
-## [Lawrence's CLI setup](https://drive.google.com/file/d/1MbZeF0V-1JB75qxOoTH_Fk3mxsoEpRuC/view?usp=sharing)
-
----
-
 ## Exercises
-
-### Exercise 1
 
 1. Navigate to your home directory
 2. List all the files and directories in your current directory
-3. Create a directory called `test` using
+3. Create a directory called `test` using `mkdir`
 4. Change into the `test` directory
 5. Create a file called `file.txt`
-6. List the contents of the test directory
-7. Rename the `file.txt` file to `newfile.txt`
+6. Rename the `file.txt` file to `result.txt`
 
 ---
 
-8. List the contents of the test directory again
-9. Change back to the parent directory
-10. Remove the `test` directory and all its contents
-
-### Exercise 2
-
-1. Navigate to your home directory
-2. Create a directory called `temp`
-3. Create two files, `temp1.txt`, `temp2.txt`
-4. Add the string `"Hello Temp 1!"` to `temp1.txt` (without opening VScode)
-
----
-
-5. Add the string `"Hello Temp 2!"` to `temp2.txt`
-6. Append the string `"New Line"` to `temp2.txt`
-7. Combine the contents of `temp1` and `temp2` and add that to a file called `test`
-8. Delete all contents of `temp` directory and all the files in it (using one command)
+7. Download the text from `https://raw.githubusercontent.com/ImPrankster/tamid-tech-resources/main/cli/foundation-and-earth` to `novel.txt`
+8. Search for the word `robot` (case ignored) in `novel.txt`, and output to `result.txt`
