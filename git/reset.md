@@ -10,7 +10,7 @@ the hands of someone who understands the risks.
 
 ## Checkout
 
-Let's reorientate ourselves.
+Let's reorient ourselves.
 
 ```sh
 > git log --graph --oneline --decorate master

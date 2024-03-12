@@ -45,7 +45,6 @@ won't seem so cryptic, and you will know what they do.
   **"local repository"**
 - The directory above the `.git` folder, where you edit your
   actual files, is called the "working directory" or **"workspace"**
-- Refer to ![width:300px](/git-training/images/git-transport.png)
 
 ---
 
@@ -77,14 +76,7 @@ data loss or corruption.
 
 ## Next
 
-Let's start by learning about commits.
-
----
-
-# Git - Commits
-
-This guide is intended as a primer for understanding
-how Git commits work.
+Let's learn about commits.
 
 ---
 
